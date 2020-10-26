@@ -1,0 +1,226 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: "Lato";
+}
+
+.header-contact-info {
+  /* Spaces the contact icons and text out along the top of the page */
+  display: flex;
+  justify-content: space-between;
+  /* Adds space above the contact icons and text so they don't hit the top of the page */
+  padding-top: 20px;
+  color: #eee8e8;
+  font-family: "Poppins";
+  margin-left: 107px;
+  margin-right: 107px
+}
+
+/* When the screen is smaller, the top contact info moves horizontal to vertical */
+@media screen and (max-width: 1109px) {
+  .header-contact-info {
+    /* Spaces the contact icons and text in rows */
+    display: grid;
+    float: left;
+    text-align: left;
+    margin-left: 5px;
+  }
+}
+
+a {
+  /*makes the cursor a hand when hovering over a link*/
+  cursor: pointer;
+  /*makes the font bigger by the given % */
+  font-size: 115%;
+  color: white;
+}
+
+h2 {
+  font-family: "Roboto";
+}
+
+.nav {
+  width: 160px;
+  margin-top: 91px;
+  position: relative;
+  height: 100%;
+  font-family: "Poppins";
+}
+
+.flex-column {
+  margin-top: 100px;
+}
+
+.nav-container {
+  position: fixed;
+  height: 100%;
+}
+
+/* Remove the bullet points from lists */
+
+.nav-list {
+  padding: 0;
+  list-style-type: none;
+}
+
+.no-bullets {
+  list-style-type: none;
+}
+
+.heading-font {
+  color: white;
+  font-family: "Montserrat";
+  font-size: 4em;
+  margin-bottom: 30px;
+  line-height: normal;
+}
+
+.material-icons {
+  /* This allows the icons to line up with the text */
+  vertical-align: middle;
+  margin-left: 6px;
+  margin-right: 6px;
+}
+
+/* Decrease font size when screen in 685px or smaller */
+
+@media screen and (max-width: 685px) {
+  .heading-font {
+    font-size: 3em;
+  }
+}
+
+/* The sidebar menu */
+
+.sidenav {
+  height: 100%;
+  /* Set the width of the sidebar */
+  width: 160px;
+  /* Fixed Sidebar (stay in place on scroll) */
+  position: fixed;
+  /* Stay on top */
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #0585ae;
+  /* Disable horizontal scroll */
+  overflow-x: hidden;
+  padding-top: 106px;
+}
+
+/* The navigation menu links */
+
+.sidenav a {
+  /* padding: 6px 8px 6px 16px; */
+  text-decoration: none;
+  font-size: 18px;
+  color: #f0efef;
+  display: block;
+  font-family: "Poppins";
+}
+
+/* When you mouse over the navigation links, change their color */
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+/* Style page content */
+
+.social-links {
+  font-size: 4em;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.social-link-icons {
+  margin-left: .2em;
+  margin-right: .2em;
+  color: rgb(39, 103, 104);
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
+
+@media screen and (max-height: 450px) {
+  .sidenav {
+    padding-top: 15px;
+  }
+  .sidenav a {
+    font-size: 18px;
+  }
+}
+
+.page-container {
+  margin-left: 160px;
+  height: 100%;
+  max-width: 100%;
+}
+
+.page-section {
+  padding: 20px;
+  background-color: #f1f1f1;
+  margin: auto;
+  color: black;
+  justify-content: center;
+  line-height: 100%;
+  margin: auto;
+}
+
+.home-section {
+  padding: 20px;
+  padding-top: 100px;
+  /* Center the home page font */
+  text-align: center;
+}
+
+.content-container {
+  /* Offset the container to match the sidenav width */
+  margin-left: -160px;
+  padding-top: 100px;
+  max-width: 1000px;
+  justify-items: center;
+  justify-content: center;
+  margin: auto;
+  left: 50%;
+  right: 50%;
+}
+
+.main-section {
+  width: 100%;
+  height: 100%;
+}
+
+.section-background {
+  background-color: hsl(205deg 19% 64%);
+}
+
+.home-background {
+  background-image: linear-gradient(to right top, #0d6ea0, #0091b5, #00b2b4, #2bd09f, #9ae882);
+}
+
+.fixed-sections {
+  position: fixed;
+  width: 100%;
+}
+
+.body-container {
+  margin-top: 100px;
+  position: relative;
+}
+
+/* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
+
+@media (max-width: 600px) {
+  nav, .page-section {
+    width: 100%;
+    height: auto;
+  }
+}
