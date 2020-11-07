@@ -4,6 +4,8 @@
 
 html, body {
   height: 100%;
+  /* A smooth scroll behavior slides the page down to the next section on nav link click */
+  scroll-behavior: smooth;
 }
 
 body {
@@ -24,6 +26,7 @@ body {
 }
 
 /* When the screen is smaller, the top contact info moves horizontal to vertical */
+
 @media screen and (max-width: 1109px) {
   .header-contact-info {
     /* Spaces the contact icons and text in rows */
@@ -31,31 +34,22 @@ body {
     float: left;
     text-align: left;
     margin-left: 5px;
+    font-size: 15px;
+  }
+  .h2 {
+    font-size: .2rem;
   }
 }
 
 a {
   /*makes the cursor a hand when hovering over a link*/
   cursor: pointer;
-  /*makes the font bigger by the given % */
-  font-size: 115%;
   color: white;
 }
 
 h2 {
   font-family: "Roboto";
-}
-
-.nav {
-  width: 160px;
-  margin-top: 91px;
-  position: relative;
-  height: 100%;
-  font-family: "Poppins";
-}
-
-.flex-column {
-  margin-top: 100px;
+  color: #2d829d;
 }
 
 .nav-container {
@@ -64,7 +58,6 @@ h2 {
 }
 
 /* Remove the bullet points from lists */
-
 .nav-list {
   padding: 0;
   list-style-type: none;
@@ -95,22 +88,20 @@ h2 {
   .heading-font {
     font-size: 3em;
   }
+  .page-section {
+    /* The sections can take up more height when the screen size is reduced since the width is narrower, so the height is needed */
+    height: 800px;
+  }
 }
 
-/* The sidebar menu */
-
+/* The side navigation menu */
 .sidenav {
   height: 100%;
   /* Set the width of the sidebar */
   width: 160px;
   /* Fixed Sidebar (stay in place on scroll) */
   position: fixed;
-  /* Stay on top */
-  z-index: 1;
-  top: 0;
-  left: 0;
-  background-color: #0585ae;
-  /* Disable horizontal scroll */
+  background-color: rgb(100 173 196);
   overflow-x: hidden;
   padding-top: 106px;
 }
@@ -118,79 +109,63 @@ h2 {
 /* The navigation menu links */
 
 .sidenav a {
-  /* padding: 6px 8px 6px 16px; */
-  text-decoration: none;
   font-size: 18px;
   color: #f0efef;
-  display: block;
   font-family: "Poppins";
 }
 
 /* When you mouse over the navigation links, change their color */
-
-.sidenav a:hover {
-  color: #f1f1f1;
+.nav-item a:hover {
+  color: #96fdff;
 }
 
-/* Style page content */
-
+/* The container for the Linked-In and Github links */
 .social-links {
   font-size: 4em;
   display: flex;
+  /* Puts the icons in the center of the page */
   justify-content: center;
-  margin-top: 20px;
 }
 
+/* The icons themseleves for LinkedIn and Github*/
 .social-link-icons {
   margin-left: .2em;
   margin-right: .2em;
-  color: rgb(39, 103, 104);
-}
-
-/* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
-
-@media screen and (max-height: 450px) {
-  .sidenav {
-    padding-top: 15px;
-  }
-  .sidenav a {
-    font-size: 18px;
-  }
+  color: rgb(171 254 255);
 }
 
 .page-container {
   margin-left: 160px;
   height: 100%;
-  max-width: 100%;
 }
 
 .page-section {
   padding: 20px;
   background-color: #f1f1f1;
-  margin: auto;
-  color: black;
-  justify-content: center;
-  line-height: 100%;
-  margin: auto;
+  /* Curves the corners of the container */
+  border-radius: .25rem;
+  /* Adds a shadow around the container */
+  box-shadow: 0 10px 20px rgba(71, 69, 69, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  border: 1px solid rgb(175, 170, 170);
+  /* Creates a scrollbar on the container when the window size is reduced */
+  overflow-y: auto;
+}
+
+@media screen and (min-width: 686px) {
+  .page-section {
+    /* The section height should be smaller when there is more width on the screen */
+    min-height: 500px;
+  }
 }
 
 .home-section {
-  padding: 20px;
   padding-top: 100px;
   /* Center the home page font */
   text-align: center;
 }
 
-.content-container {
-  /* Offset the container to match the sidenav width */
-  margin-left: -160px;
+.container {
   padding-top: 100px;
-  max-width: 1000px;
-  justify-items: center;
-  justify-content: center;
-  margin: auto;
-  left: 50%;
-  right: 50%;
 }
 
 .main-section {
@@ -198,29 +173,17 @@ h2 {
   height: 100%;
 }
 
-.section-background {
-  background-color: hsl(205deg 19% 64%);
+/* The background color of the webpage sections */
+/* nth of type (even) or (odd) means every other element is applied this style, so we can alternate background colors */
+.section-background:nth-of-type(even) {
+  background-image: linear-gradient(rgb(122 186 198), #3794b3);
 }
 
+.section-background:nth-of-type(odd) {
+  background-image: linear-gradient(#3395b6, #3790b3, rgb(122 186 198));
+}
+
+/* Sets the gradient background color for the home page */
 .home-background {
   background-image: linear-gradient(to right top, #0d6ea0, #0091b5, #00b2b4, #2bd09f, #9ae882);
-}
-
-.fixed-sections {
-  position: fixed;
-  width: 100%;
-}
-
-.body-container {
-  margin-top: 100px;
-  position: relative;
-}
-
-/* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
-
-@media (max-width: 600px) {
-  nav, .page-section {
-    width: 100%;
-    height: auto;
-  }
 }
